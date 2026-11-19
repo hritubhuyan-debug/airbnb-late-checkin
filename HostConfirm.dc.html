@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Host: confirm check-in</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}a{color:#222222}a:hover{color:#000000}button{font-family:inherit}</style>
+</helmet>
+<div style="width: 390px; height: 844px; overflow: hidden; font-family: 'DM Sans', system-ui, sans-serif; color: #222222; background: #FFFFFF; display: flex; flex-direction: column">
+  <div style="flex: 1; padding: 56px 24px 24px 24px; display: flex; flex-direction: column; gap: 16px">
+    <div style="font-size: 14px; color: #6A6A6A; font-weight: 600">New arrival window</div>
+    <h1 style="margin: 0; font-size: 28px; font-weight: 700; line-height: 1.2">Meera + 3 arrive 12 – 2 AM</h1>
+    <div style="font-size: 15px; font-weight: 600">How will they check in? Pick one</div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <button style="height: 52px; border-radius: 12px; border: 1px solid #DDDDDD; background: #FFFFFF; font-size: 16px; color: #222222; text-align: left; padding: 0 16px">Caretaker hands over the key</button>
+      <button style="height: 52px; border-radius: 12px; border: 1px solid #DDDDDD; background: #FFFFFF; font-size: 16px; color: #222222; text-align: left; padding: 0 16px">I'll meet them</button>
+      <button style="height: 52px; border-radius: 12px; border: 1px solid #DDDDDD; background: #FFFFFF; font-size: 16px; color: #222222; text-align: left; padding: 0 16px">Self check-in</button>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-top: 1px solid #EBEBEB; border-bottom: 1px solid #EBEBEB"><span style="font-size: 15px">Backup contact</span><span style="font-size: 15px; font-weight: 600; text-decoration: underline">Add</span></div>
+    <div style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 15px">Guest wants entry details by</span><span style="font-size: 15px; font-weight: 600">Call</span></div>
+    <div style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 15px">Guest ID</span><span style="font-size: 15px; font-weight: 600; color: #05592A">Received</span></div>
+  </div>
+  <div style="padding: 16px 24px 32px 24px">
+    <button style="width: 100%; height: 52px; border-radius: 8px; border: none; background: #E00B41; color: #FFFFFF; font-size: 16px; font-weight: 600">Confirm check-in plan</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

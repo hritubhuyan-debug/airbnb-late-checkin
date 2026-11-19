@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Can't get in</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}a{color:#F5F5F5}a:hover{color:#FFFFFF}</style>
+</helmet>
+<div style="width: 390px; height: 844px; overflow: hidden; font-family: 'DM Sans', system-ui, sans-serif; color: #F5F5F5; background: #121212; display: flex; flex-direction: column">
+  <div style="flex: 1; padding: 56px 20px 16px 20px; display: flex; flex-direction: column; gap: 14px">
+    <div style="font-size: 14px; color: #8EE3A8; font-weight: 600">Airbnb is calling for you</div>
+    <div style="border-radius: 16px; background: #1E1E1E; padding: 4px 16px; display: flex; flex-direction: column">
+      <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #2E2E2E"><span style="font-size: 15px">Priya (host)</span><span style="font-size: 14px; color: #D6D6D6">{{ priya }}</span></div>
+      <div style="display: flex; justify-content: space-between; padding: 12px 0"><span style="font-size: 15px">Ravi (backup)</span><span style="font-size: 14px; color: #D6D6D6">{{ ravi }}</span></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 6px"><h1 style="margin: 0; font-size: 22px; font-weight: 700">Open 24 hrs nearby</h1><span style="font-size: 13px; color: #B0B0B0">From Airbnb · offline</span></div>
+    <div style="border-radius: 16px; background: #1E1E1E; padding: 4px 16px; display: flex; flex-direction: column">
+      <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #2E2E2E"><span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 600">Seabreeze Inn</span><span style="font-size: 13px; color: #B0B0B0">24-hr front desk</span></span><span style="font-size: 15px">600 m</span></div>
+      <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #2E2E2E"><span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 600">Corner pharmacy</span><span style="font-size: 13px; color: #B0B0B0">Open 24 hrs</span></span><span style="font-size: 15px">80 m</span></div>
+      <div style="display: flex; justify-content: space-between; padding: 12px 0"><span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 600">Police station</span><span style="font-size: 13px; color: #B0B0B0">Open 24 hrs</span></span><span style="font-size: 15px">1.1 km</span></div>
+    </div>
+  </div>
+  <div style="padding: 12px 20px 32px 20px; display: flex; flex-direction: column; gap: 8px">
+    <a href="tel:" style="display: flex; align-items: center; justify-content: center; height: 56px; border-radius: 8px; background: #E00B41; color: #FFFFFF; font-size: 17px; font-weight: 700; text-decoration: none">Contact Airbnb</a>
+    <div style="font-size: 13px; color: #B0B0B0; text-align: center">Rebooking or refund is handled by support</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { step: 0 }; }
+  componentDidMount() { this.t = setInterval(() => { if (this.state.step < 2) this.setState({ step: this.state.step + 1 }); }, 2500); }
+  componentWillUnmount() { clearInterval(this.t); }
+  renderVals() {
+    const s = this.state.step;
+    return { priya: s === 0 ? 'Calling…' : 'No answer', ravi: s === 0 ? 'Next' : (s === 1 ? 'Calling…' : 'No answer') };
+  }
+}
+</script>
+</body>
+</html>
