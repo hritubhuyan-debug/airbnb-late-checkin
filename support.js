@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded',()=>{
   st.textContent=`html,body{margin:0;background:#EDEAEA;min-height:100vh}
   #dc-stage{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:24px 0;box-sizing:border-box;gap:14px}
   #dc-phone{width:390px;height:844px;border-radius:44px;overflow:hidden;box-shadow:0 0 0 10px #1d1d1f,0 30px 80px rgba(0,0,0,.25);background:#fff;position:relative}
+  @keyframes dcPulse{0%{box-shadow:0 0 0 0 rgba(224,11,65,.55)}70%{box-shadow:0 0 0 14px rgba(224,11,65,0)}100%{box-shadow:0 0 0 0 rgba(224,11,65,0)}}
+    @keyframes dcNudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+    @keyframes dcBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes dcJump{0%,55%{opacity:1}100%{opacity:0;visibility:hidden}}
+    .dc-skip,.dc-pulse{animation:dcPulse 1.8s ease-out infinite}.dc-nudge{display:inline-block;animation:dcNudge 1.2s ease-in-out infinite}
+    .dc-bounce{display:inline-block;animation:dcBounce 1.2s ease-in-out infinite}.dc-jump{animation:dcJump 2.6s ease forwards}
+    .dc-pulse{animation-delay:2.4s}
+    @media (prefers-reduced-motion:reduce){.dc-skip,.dc-pulse,.dc-nudge,.dc-bounce{animation:none}.dc-jump{animation:dcJump .01s 1.2s forwards}}
   #dc-bar{font:500 13px 'DM Sans',system-ui,sans-serif;color:#6A6A6A;display:flex;gap:16px}#dc-bar a{color:#222;text-decoration:underline}
   @media (max-width:500px){html,body{background:#fff}#dc-stage{padding:0;display:block}#dc-phone{width:100vw;height:100vh;border-radius:0;box-shadow:none}#dc-phone>div{width:100vw!important;height:100vh!important}#dc-bar{display:none}}`;
   document.head.appendChild(st);
